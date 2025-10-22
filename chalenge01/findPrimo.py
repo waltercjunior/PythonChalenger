@@ -1,38 +1,38 @@
-# Escrever função encontrar fatores primos que compõe um número
-# Recebe um número inteiro positivo n
-# Retorna uma lista com os fatores primos de n
-# O racional para encontrar os números primos para encontar o valor deve ser:
-# Recebe 630 como entrada
-# Retorna a lista [2, 3, 3, 5, 7] pois 2 * 3 * 3 * 5 * 7 = 630
-# Outro exemplo:
-# recebe 13 como entrada
-# deve retornar 13, pois é número primo
+# Write a function to find the prime factors that compose a number
+# Takes a positive integer n as input
+# Returns a list of n's prime factors
+# The rationale for finding the prime numbers to determine the value should be:
+# Takes 630 as input
+# Returns the list [2, 3, 3, 5, 7] because 2 * 3 * 3 * 5 * 7 = 630
+# Another example:
+# Takes 13 as input
+# Should return 13, because it is a prime number
 
-#exemplo de uso:
-# recebe 60 como entrada
-# divide 60 / 2 = 30   lista 
-# divide 30 / 2 = 15  lista [2, 2]
-# divide 15 / 3 = 5   lista [2, 2, 3]
-# divide 5 / 5 = 1    lista [2, 2, 3, 5]
+# Usage example:
+# Takes 60 as input
+# Divides 60 / 2 = 30   list 
+# Divides 30 / 2 = 15  list [2, 2]
+# Divides 15 / 3 = 5   list [2, 2, 3]
+# Divides 5 / 5 = 1    list [2, 2, 3, 5]
 
 import sys
 
 
-def encontrar_fatores_primos(n):
-    fatores = []
+def find_prime_factors(n):
+    factors = []
     divisor = 2
 
     if type(n) == int and n > 0:
         while n > 1:
             while n % divisor == 0:
-                fatores.append(divisor)
+                factors.append(divisor)
                 n //= divisor
             divisor += 1
         
-        return fatores
+        return factors
     else:
         
-        return "Valor inválido"
+        return "Wrong value"
 
 
-print(encontrar_fatores_primos(int(sys.argv[1])))
+print(find_prime_factors(int(sys.argv[1])))
